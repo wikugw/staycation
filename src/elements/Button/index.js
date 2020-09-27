@@ -11,7 +11,7 @@ export default function Button(props) {
   if (props.hasShadow) className.push("btn-shadow")
 
   const onClick = () => {
-    if (props.onClick) props.onClick
+    if (props.onClick) props.onClick()
   }
 
   if (props.isDisabled || props.isLoading) {
@@ -31,7 +31,7 @@ export default function Button(props) {
     )
   }
 
-  if (props.type == "link") {
+  if (props.type === "link") {
     if (props.isExternal) {
       return (
         <a
