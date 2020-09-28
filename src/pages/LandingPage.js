@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import Header from 'components/Header'
 import Hero from 'components/Hero'
 import MostPicked from 'components/MostPicked'
+import Categories from 'components/Categories'
 
 import landingPageJSON from 'json/landingPage.json'
 
@@ -17,6 +18,7 @@ export default class LandingPage extends Component {
         <Header {...this.props} />
         <Hero refMostPicked={this.refMostPicked} data={landingPageJSON.hero} />
         <MostPicked refMostPicked={this.refMostPicked} data={landingPageJSON.mostPicked} />
+        <Categories data={landingPageJSON.categories} />
       </>
     )
   }
