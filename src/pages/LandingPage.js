@@ -8,7 +8,7 @@ import Testimoni from 'components/Testimoni'
 
 import landingPageJSON from 'json/landingPage.json'
 import Footer from 'components/Footer'
-import InputNumber from 'elements/Form/InputNumber'
+import InputDate from 'elements/Form/InputDate'
 
 export default class LandingPage extends Component {
   constructor(props) {
@@ -16,7 +16,11 @@ export default class LandingPage extends Component {
     this.refMostPicked = React.createRef()
   }
   state = {
-    value: '1'
+    value: {
+      startDate: new Date(),
+      endDate: new Date(),
+      key: 'selection'
+    }
   }
 
   handleChange = event => {
@@ -35,7 +39,12 @@ export default class LandingPage extends Component {
         <div className="container">
           <div className="row align-items-center justify-content-center">
             <div className="col-auto">
-              <InputNumber max={30} isSuffixPlural suffix=" night" onChange={this.handleChange} name="value" value={this.state.value} />
+              <InputDate
+                max={30}
+                onChange={this.handleChange}
+                name='value'
+                value={this.state.value} />
+              {/* <InputNumber max={30} isSuffixPlural suffix=" night" onChange={this.handleChange} name="value" value={this.state.value} /> */}
             </div>
           </div>
         </div>
