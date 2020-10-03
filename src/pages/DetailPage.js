@@ -7,6 +7,7 @@ import PageDetailDescription from 'components/PageDetailDescription'
 import BookingForm from 'components/BookingForm'
 import Testimoni from 'components/Testimoni'
 import Footer from 'components/Footer'
+import Categories from 'components/Categories'
 
 export default class DetailPage extends Component {
 
@@ -37,6 +38,7 @@ export default class DetailPage extends Component {
             </div>
           </div>
         </section>
+        <Categories data={itemDetails.categories} />
         <Testimoni data={itemDetails.testimonial} />
         <Footer />
       </>
