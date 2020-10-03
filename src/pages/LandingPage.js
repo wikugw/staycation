@@ -8,30 +8,18 @@ import Testimoni from 'components/Testimoni'
 
 import landingPageJSON from 'json/landingPage.json'
 import Footer from 'components/Footer'
-import InputDate from 'elements/Form/InputDate'
-import Breadcrumb from 'elements/Breadcrumb'
 
 export default class LandingPage extends Component {
   constructor(props) {
     super(props);
     this.refMostPicked = React.createRef()
   }
-  state = {
-    value: {
-      startDate: new Date(),
-      endDate: new Date(),
-      key: 'selection'
-    }
-  }
 
-  handleChange = event => {
-    this.setState({ [event.target.name]: event.target.value })
+  componentDidMount() {
+    window.title = 'StayCation | Home'
+    window.scrollTo(0, 0)
   }
   render() {
-    const breadcumbList = [
-      { pageTitle: 'Home', pageHref: '' },
-      { pageTitle: 'House Detail', pageHref: '' }
-    ]
     return (
       <>
         <Header {...this.props} />
@@ -40,19 +28,6 @@ export default class LandingPage extends Component {
         <Categories data={landingPageJSON.categories} />
         <Testimoni data={landingPageJSON.testimonial} />
         <Footer />
-        <div className="container">
-          <div className="row align-items-center justify-content-center">
-            <div className="col-auto">
-              <Breadcrumb data={breadcumbList} />
-              {/* <InputDate
-                max={30}
-                onChange={this.handleChange}
-                name='value'
-                value={this.state.value} /> */}
-              {/* <InputNumber max={30} isSuffixPlural suffix=" night" onChange={this.handleChange} name="value" value={this.state.value} /> */}
-            </div>
-          </div>
-        </div>
       </>
     )
   }
