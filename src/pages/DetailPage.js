@@ -8,6 +8,7 @@ import BookingForm from 'components/BookingForm'
 import Testimoni from 'components/Testimoni'
 import Footer from 'components/Footer'
 import Categories from 'components/Categories'
+import Fade from 'react-reveal'
 
 export default class DetailPage extends Component {
 
@@ -31,10 +32,14 @@ export default class DetailPage extends Component {
         <section className="container">
           <div className="row">
             <div className="col-7 pr-5">
-              <PageDetailDescription data={itemDetails} />
+              <Fade bottom>
+                <PageDetailDescription data={itemDetails} />
+              </Fade>
             </div>
             <div className="col-5">
-              <BookingForm itemDetails={itemDetails} />
+              <Fade bottom>
+                <BookingForm itemDetails={itemDetails} />
+              </Fade>
             </div>
           </div>
         </section>

@@ -4,6 +4,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 import './assets/scss/style.scss'
+import Checkout from 'pages/Checkout';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Router>
         <Route exact path="/" component={LandingPage} />
         <Route path="/property/:id" component={DetailPage} />
+        <Route path="/checkout" component={Checkout} />
       </Router>
     </div>
   );
